@@ -53,6 +53,9 @@ export const AuthProvider = ({ children }) => {
                 setCurrentUser(null);
             }
             setLoading(false);
+        }, (error) => {
+            console.error("Auth error:", error);
+            setLoading(false);
         });
 
         return unsubscribe;
